@@ -73,7 +73,7 @@ use Exporter qw(import);
 sub soplex {
     state $soplex = do {
         my $exe = eval {
-            require 'CInet::Alien::SoPlex';
+            require CInet::Alien::SoPlex;
             CInet::Alien::SoPlex->exe
         };
         $exe //= which 'soplex';

@@ -7,7 +7,7 @@ use IPC::Run3;
 use Path::Tiny;
 
 use Test::More;
-use CInet::Alien::SoPlex qw(soplex);
+use CInet::Bridge::SoPlex qw(soplex);
 
 # This is an inequality description of the cone of polymatroids on a ground
 # set of five elements. It is a rational polyhedral cone in dimension 32.
