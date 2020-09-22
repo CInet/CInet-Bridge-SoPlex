@@ -12,18 +12,19 @@ use CInet::Bridge::SoPlex qw(soplex);
 # This is an inequality description of the cone of polymatroids on a ground
 # set of five elements. It is a rational polyhedral cone in dimension 32.
 #
-# Its face lattice is antiisomorphic to the lattice of semimatroids, which
-# are conditional independence structures which resemble entropy vectors.
-# We test soplex by letting it decide whether CI structures are semimatroids
-# or not, which is equivalent to finding a relatively interior point on the
-# face described by a given conditional independence structure.
+# Polymatroids resemble entropy vectors and the face lattice of this cone
+# is antiisomorphic to the lattice of semimatroids, which are certain
+# abstract conditional independence structures. We test soplex by letting it
+# decide whether CI structures are semimatroids or not, which is equivalent
+# to finding a relatively interior point that exactly realizes the given
+# structure, on the face described by its conditional independencies.
 #
-# The first 80 inequalities define the inequalities define the relevant
-# facets of the cone from the point of view of conditional independence
-# (neglecting functional dependence). A conditional independence structure
-# is given by a string of exactly 80 characters which are "0" and "1".
-# A "0" makes the inequality tight whereas a "1" makes it strict, which,
-# since it is a rational polyhedral cone, is equivalent to ">= 1".
+# The first 80 inequalities are the relevant facets of the cone from the
+# point of view of conditional independence (neglecting functional dependence).
+# A conditional independence structure is given by a string of exactly
+# 80 characters which are "0" and "1". A "0" makes the inequality tight
+# whereas a "1" makes it strict, which, since it is a rational polyhedral
+# cone, is equivalent to ">= 1".
 my @polymatroids = (
     [ [ -1, 1, 1, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], '>=', 0 ],
     [ [ 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ], '>=', 0 ],
